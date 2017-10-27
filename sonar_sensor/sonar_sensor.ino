@@ -1,10 +1,3 @@
-/*
-* Ultrasonic Sensor HC-SR04 and Arduino Tutorial
-*
-* Crated by Dejan Nedelkovski,
-* www.HowToMechatronics.com
-*
-*/
 // defines pins numbers
 const int trigPin = 9;
 const int echoPin = 10;
@@ -33,9 +26,16 @@ void loop() {
     // Calculating the distance
     distanceCM= duration*0.034/2;
     distanceIN= duration*0.0133/2;
-    if (distanceIN < 50){
+
+    // Always print
+//    Serial.print("DistanceIN: ");
+//    Serial.println(distanceIN);
+//    
+    // Check if distance is within 25 inches
+    if (distanceIN < 60){
       count += 1;
-      if (count > 3){
+      // Remove false positives
+      if (count > 4){
       // Prints the distance on the Serial Monitor
         Serial.print("DistanceIN: ");
         Serial.println(distanceIN);
