@@ -27,12 +27,12 @@ void loop() {
     distanceCM= duration*0.034/2;
     distanceIN= duration*0.0133/2;
 
-    // Always print
+////     Always print
 //    Serial.print("DistanceIN: ");
 //    Serial.println(distanceIN);
-//    
-    // Check if distance is within 25 inches
-    if (distanceIN < 60){
+    
+    // Check if distance is within X inches
+    if (distanceIN < 15){
       count += 1;
       // Remove false positives
       if (count > 4){
